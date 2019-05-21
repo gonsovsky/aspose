@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Aspose
+namespace Aspose.Keypad
 {
-    public abstract class Keypad
+    public abstract class Keypad: IKeypad
     {
         protected ILocale Locale;
 
-        protected abstract List<char> KeyList { get; }
+        protected abstract IEnumerable<char> KeyList { get; }
 
         protected Dictionary<char, Tuple<string,char>> Map;
 
@@ -22,19 +22,20 @@ namespace Aspose
         protected Dictionary<char, Tuple<string, char>> MakeMap()
         {
             var result = new Dictionary<char, Tuple<string, char>>();
-            var key = KeyList[0];
-            var maxcapacity = Locale.KeyCapacity(key);
+            var key = KeyList.GetEnumerator();
+            key.MoveNext();
+            var maxcapacity = Locale.KeyCapacity(key.Current);
             var capacity = 0;
             foreach (var letter in Locale.Alphabet)
             {
-                var sequence = "".PadRight(capacity + 1, key);
-                result[letter] = new Tuple<string, char>(sequence, key);
+                var sequence = "".PadRight(capacity + 1, key.Current);
+                result[letter] = new Tuple<string, char>(sequence, key.Current);
                 capacity++;
                 if (capacity == maxcapacity)
                 {
                     capacity = 0;
-                    key = (char)(key + 1);
-                    maxcapacity = Locale.KeyCapacity(key);
+                    key.MoveNext();
+                    maxcapacity = Locale.KeyCapacity(key.Current);
                 }
             }
             result[' '] = new Tuple<string, char>("0",'0');

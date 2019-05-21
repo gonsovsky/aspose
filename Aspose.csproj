@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\Converter.cs" />
+    <Compile Include="Converter\FileConverter.cs" />
+    <Compile Include="Keypad\IKeypad.cs" />
     <Compile Include="Locale\EnglishLocale.cs" />
     <Compile Include="Locale\ILocale.cs" />
     <Compile Include="Locale\RussianLocale.cs" />

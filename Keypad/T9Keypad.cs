@@ -2,15 +2,15 @@
 using System.Linq;
 using Aspose.Alphabet;
 
-namespace Aspose
+namespace Aspose.Keypad
 {
     public class T9Keypad: Keypad
     {
         public T9Keypad(ILocale locale) : base(locale) { }
 
-        protected override List<char> KeyList =>
+        protected override IEnumerable<char> KeyList =>
                Enumerable.Range('2', '9')
-                                        .Select(i => (char)i)
-                                        .ToList();
+                                        .Select(i => (char)i);
+                                     
     }
 }
