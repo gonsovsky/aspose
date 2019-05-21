@@ -1,0 +1,7 @@
+c:\users\k\source\repos\Aspose\Aspose\obj\Debug\Aspose.csprojAssemblyReference.cache
+c:\users\k\source\repos\Aspose\Aspose\obj\Debug\Aspose.csproj.CoreCompileInputs.cache
+c:\users\k\source\repos\Aspose\Aspose\bin\Debug\Aspose.exe.config
+c:\users\k\source\repos\Aspose\Aspose\bin\Debug\Aspose.exe
+c:\users\k\source\repos\Aspose\Aspose\bin\Debug\Aspose.pdb
+c:\users\k\source\repos\Aspose\Aspose\obj\Debug\Aspose.exe
+c:\users\k\source\repos\Aspose\Aspose\obj\Debug\Aspose.pdb
